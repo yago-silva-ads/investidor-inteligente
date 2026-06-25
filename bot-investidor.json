@@ -1,0 +1,345 @@
+﻿{
+  "version": "6",
+  "id": "investidor-inteligente-bot",
+  "name": "Bot Investidor Inteligente",
+  "groups": [
+    {
+      "id": "g-start",
+      "title": "Start",
+      "graphCoordinates": { "x": 0, "y": 200 },
+      "blocks": [
+        {
+          "id": "b-start",
+          "type": "start",
+          "label": "Start",
+          "outgoingEdgeId": "e-start-to-saudacao"
+        }
+      ]
+    },
+    {
+      "id": "g-saudacao",
+      "title": "Saudação",
+      "graphCoordinates": { "x": 280, "y": 200 },
+      "blocks": [
+        {
+          "id": "b-saudacao1",
+          "type": "text",
+          "content": {
+            "richText": [
+              { "type": "p", "children": [{ "text": "Olá! 👋 Bem-vindo(a)!" }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "Sou o assistente do Yago e estou aqui para te ajudar a investir com mais segurança! 💛" }] }
+            ]
+          },
+          "outgoingEdgeId": "e-saud1-to-saud2"
+        },
+        {
+          "id": "b-saudacao2",
+          "type": "text",
+          "content": {
+            "richText": [
+              { "type": "p", "children": [{ "text": "Me conta uma coisa 👇" }] }
+            ]
+          },
+          "outgoingEdgeId": "e-saud2-to-qualif"
+        },
+        {
+          "id": "b-qualif",
+          "type": "choice input",
+          "items": [
+            {
+              "id": "item-medo",
+              "content": "😰 Tenho medo de perder dinheiro",
+              "outgoingEdgeId": "e-qualif-to-medo"
+            },
+            {
+              "id": "item-perdeu",
+              "content": "📉 Já perdi dinheiro sem entender por quê",
+              "outgoingEdgeId": "e-qualif-to-perdeu"
+            },
+            {
+              "id": "item-comecar",
+              "content": "🌱 Quero começar mas não sei como",
+              "outgoingEdgeId": "e-qualif-to-comecar"
+            },
+            {
+              "id": "item-investidor",
+              "content": "📊 Já invisto mas quero melhorar",
+              "outgoingEdgeId": "e-qualif-to-investidor"
+            }
+          ],
+          "options": {
+            "isMultipleChoice": false,
+            "buttonAlignment": "left",
+            "dynamicVariableId": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-medo",
+      "title": "Resposta - Medo",
+      "graphCoordinates": { "x": 700, "y": 0 },
+      "blocks": [
+        {
+          "id": "b-medo1",
+          "type": "text",
+          "content": {
+            "richText": [
+              { "type": "p", "children": [{ "text": "Entendo! E saiba que esse medo é saudável 🛡️" }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "Benjamin Graham passou por exatamente isso em 1929." }] },
+              { "type": "p", "children": [{ "text": "Ele perdeu quase tudo... e daí criou o método mais seguro de investir do mundo." }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "A resposta dele foi simples:" }] },
+              { "type": "p", "children": [{ "text": "✅ Nunca compre sem Margem de Segurança" }] }
+            ]
+          },
+          "outgoingEdgeId": "e-medo-to-link"
+        }
+      ]
+    },
+    {
+      "id": "g-perdeu",
+      "title": "Resposta - Perdeu Dinheiro",
+      "graphCoordinates": { "x": 700, "y": 200 },
+      "blocks": [
+        {
+          "id": "b-perdeu1",
+          "type": "text",
+          "content": {
+            "richText": [
+              { "type": "p", "children": [{ "text": "Isso acontece com 90% dos investidores que não têm um método claro 😔" }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "A boa notícia? Tem solução!" }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "A estratégia de Benjamin Graham foi desenvolvida justamente para proteger o capital do investidor contra as armadilhas do mercado." }] }
+            ]
+          },
+          "outgoingEdgeId": "e-perdeu-to-link"
+        }
+      ]
+    },
+    {
+      "id": "g-comecar",
+      "title": "Resposta - Quero Começar",
+      "graphCoordinates": { "x": 700, "y": 400 },
+      "blocks": [
+        {
+          "id": "b-comecar1",
+          "type": "text",
+          "content": {
+            "richText": [
+              { "type": "p", "children": [{ "text": "Que ótima decisão começar agora! ✅" }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "Sabe qual é o erro mais comum de quem está começando? Investir sem método." }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "O eBook O Investidor Inteligente foi criado exatamente para você:" }] },
+              { "type": "p", "children": [{ "text": "✅ Do zero ao básico em linguagem simples" }] },
+              { "type": "p", "children": [{ "text": "✅ Como escolher ações com segurança" }] },
+              { "type": "p", "children": [{ "text": "✅ Monte sua primeira carteira do jeito certo" }] }
+            ]
+          },
+          "outgoingEdgeId": "e-comecar-to-link"
+        }
+      ]
+    },
+    {
+      "id": "g-investidor",
+      "title": "Resposta - Já Investe",
+      "graphCoordinates": { "x": 700, "y": 600 },
+      "blocks": [
+        {
+          "id": "b-investidor1",
+          "type": "text",
+          "content": {
+            "richText": [
+              { "type": "p", "children": [{ "text": "Ótimo! Você já está na frente da maioria! 👏" }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "Mas aqui vai uma pergunta honesta:" }] },
+              { "type": "p", "children": [{ "text": "Você já calculou a Margem de Segurança de cada ativo antes de comprar?" }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "📊 Fórmula de Graham:" }] },
+              { "type": "p", "children": [{ "text": "Preço Justo = √(22,5 × LPA × VPA)" }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "No eBook você aprende a aplicar isso em qualquer ação da B3!" }] }
+            ]
+          },
+          "outgoingEdgeId": "e-investidor-to-link"
+        }
+      ]
+    },
+    {
+      "id": "g-link",
+      "title": "Enviar Link de Compra",
+      "graphCoordinates": { "x": 1100, "y": 300 },
+      "blocks": [
+        {
+          "id": "b-link1",
+          "type": "text",
+          "content": {
+            "richText": [
+              { "type": "p", "children": [{ "text": "📘 eBook O Investidor Inteligente" }] },
+              { "type": "p", "children": [{ "text": "Por apenas R$ 10,00 🔥" }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "✅ Acesso imediato" }] },
+              { "type": "p", "children": [{ "text": "✅ Garantia de 7 dias" }] },
+              { "type": "p", "children": [{ "text": "💳 PIX, Cartão ou Boleto" }] }
+            ]
+          },
+          "outgoingEdgeId": "e-link1-to-link2"
+        },
+        {
+          "id": "b-link2",
+          "type": "text",
+          "content": {
+            "richText": [
+              { "type": "p", "children": [{ "text": "👉 Compre agora:" }] },
+              { "type": "p", "children": [{ "text": "https://pay.kiwify.com.br/pUDitcM" }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "🔗 Veja a página completa:" }] },
+              { "type": "p", "children": [{ "text": "https://yago-silva-ads.github.io/investidor-inteligente/" }] }
+            ]
+          },
+          "outgoingEdgeId": "e-link2-to-final"
+        },
+        {
+          "id": "b-link3",
+          "type": "choice input",
+          "items": [
+            {
+              "id": "item-comprar",
+              "content": "✅ Já comprei!",
+              "outgoingEdgeId": "e-comprou"
+            },
+            {
+              "id": "item-duvida",
+              "content": "❓ Tenho uma dúvida",
+              "outgoingEdgeId": "e-duvida"
+            }
+          ],
+          "options": {
+            "isMultipleChoice": false,
+            "buttonAlignment": "left"
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-comprou",
+      "title": "Pós-Compra",
+      "graphCoordinates": { "x": 1500, "y": 100 },
+      "blocks": [
+        {
+          "id": "b-comprou",
+          "type": "text",
+          "content": {
+            "richText": [
+              { "type": "p", "children": [{ "text": "🎉 Parabéns pela decisão!" }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "Seu acesso foi enviado por e-mail." }] },
+              { "type": "p", "children": [{ "text": "Qualquer dúvida, chame o Yago aqui! 😊" }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "Me ajuda indicando para um amigo que também precisa aprender a investir? 🙏" }] }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "g-duvida",
+      "title": "Captura de Dúvida",
+      "graphCoordinates": { "x": 1500, "y": 500 },
+      "blocks": [
+        {
+          "id": "b-duvida1",
+          "type": "text",
+          "content": {
+            "richText": [
+              { "type": "p", "children": [{ "text": "Claro! Pode perguntar 😊" }] },
+              { "type": "p", "children": [{ "text": "Qual é a sua dúvida?" }] }
+            ]
+          },
+          "outgoingEdgeId": "e-duvida-to-input"
+        },
+        {
+          "id": "b-duvida-input",
+          "type": "text input",
+          "options": {
+            "labels": { "placeholder": "Digite sua dúvida aqui..." },
+            "variableId": "var-duvida"
+          },
+          "outgoingEdgeId": "e-input-to-resposta"
+        },
+        {
+          "id": "b-duvida-resposta",
+          "type": "text",
+          "content": {
+            "richText": [
+              { "type": "p", "children": [{ "text": "Obrigado! ✅" }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "Yago vai te responder em até 2 horas por aqui." }] },
+              { "type": "p", "children": [{ "text": "" }] },
+              { "type": "p", "children": [{ "text": "Enquanto isso, confira nossa página:" }] },
+              { "type": "p", "children": [{ "text": "https://yago-silva-ads.github.io/investidor-inteligente/" }] }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "edges": [
+    { "id": "e-start-to-saudacao", "from": { "blockId": "b-start" }, "to": { "groupId": "g-saudacao" } },
+    { "id": "e-saud1-to-saud2", "from": { "blockId": "b-saudacao1" }, "to": { "blockId": "b-saudacao2" } },
+    { "id": "e-saud2-to-qualif", "from": { "blockId": "b-saudacao2" }, "to": { "blockId": "b-qualif" } },
+    { "id": "e-qualif-to-medo", "from": { "blockId": "b-qualif", "itemId": "item-medo" }, "to": { "groupId": "g-medo" } },
+    { "id": "e-qualif-to-perdeu", "from": { "blockId": "b-qualif", "itemId": "item-perdeu" }, "to": { "groupId": "g-perdeu" } },
+    { "id": "e-qualif-to-comecar", "from": { "blockId": "b-qualif", "itemId": "item-comecar" }, "to": { "groupId": "g-comecar" } },
+    { "id": "e-qualif-to-investidor", "from": { "blockId": "b-qualif", "itemId": "item-investidor" }, "to": { "groupId": "g-investidor" } },
+    { "id": "e-medo-to-link", "from": { "blockId": "b-medo1" }, "to": { "groupId": "g-link" } },
+    { "id": "e-perdeu-to-link", "from": { "blockId": "b-perdeu1" }, "to": { "groupId": "g-link" } },
+    { "id": "e-comecar-to-link", "from": { "blockId": "b-comecar1" }, "to": { "groupId": "g-link" } },
+    { "id": "e-investidor-to-link", "from": { "blockId": "b-investidor1" }, "to": { "groupId": "g-link" } },
+    { "id": "e-link1-to-link2", "from": { "blockId": "b-link1" }, "to": { "blockId": "b-link2" } },
+    { "id": "e-link2-to-final", "from": { "blockId": "b-link2" }, "to": { "blockId": "b-link3" } },
+    { "id": "e-comprou", "from": { "blockId": "b-link3", "itemId": "item-comprar" }, "to": { "groupId": "g-comprou" } },
+    { "id": "e-duvida", "from": { "blockId": "b-link3", "itemId": "item-duvida" }, "to": { "groupId": "g-duvida" } },
+    { "id": "e-duvida-to-input", "from": { "blockId": "b-duvida1" }, "to": { "blockId": "b-duvida-input" } },
+    { "id": "e-input-to-resposta", "from": { "blockId": "b-duvida-input" }, "to": { "blockId": "b-duvida-resposta" } }
+  ],
+  "variables": [
+    { "id": "var-duvida", "name": "duvida_cliente" }
+  ],
+  "settings": {
+    "general": {
+      "isBrandingEnabled": false,
+      "isInputPrefillEnabled": true,
+      "isHideQueryParamsEnabled": true,
+      "isNewResultOnRefreshEnabled": false
+    },
+    "typingEmulation": {
+      "enabled": true,
+      "speed": 300,
+      "maxDelay": 1.5
+    },
+    "metadata": {
+      "title": "Bot Investidor Inteligente"
+    }
+  },
+  "theme": {
+    "general": {
+      "background": { "type": "Color", "content": "#111827" }
+    },
+    "chat": {
+      "hostAvatar": { "isEnabled": true },
+      "hostBubbles": {
+        "backgroundColor": "#1e3a5f",
+        "color": "#ffffff"
+      },
+      "buttons": {
+        "backgroundColor": "#f0c040",
+        "color": "#050d1a"
+      }
+    }
+  }
+}
